@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from turtle import *
 
 speed(0)
@@ -68,13 +67,12 @@ def drawText():
         color("White")
         write("Kenneth Alexander's Turtle Project", font=("Arial", 16, "bold"))
 
-def draw_onscreen( r, g , b):
+def draw_onscreen():
     turtle = Turtle()
     turtle.color("green")
     screen = Screen()
     screen.onscreenclick(turtle.goto)
     turtle.getscreen()._root.mainloop()
-    color(r, g, b)
 
 def black_hole():
     turtle = Turtle()
@@ -84,6 +82,25 @@ def black_hole():
             turtle.forward(150)
             turtle.right(85)
         right(1)
+
+        
+canvas = Screen()        
+move = Turtle()
+color("Purple")
+
+def k1():
+    move.forward(10)
+
+def k2():
+    move.left(45)
+
+def k3():
+    move.right(45)
+
+def k4():
+    move.backward(10)
+
+
 draw_box()
 draw_sun(80, 50, 36, "orange",  "red")
 draw_star(400, 90, 10, 36, "white", "white")
@@ -99,5 +116,11 @@ drawCircle(-250, 200, "gray", "gray", 100)
 drawCircle(-380, -370, "blue", "blue", 200)
 black_hole()
 drawText()
-draw_onscreen(178, 255, 102)
+canvas.onkey(k1, "Up")
+canvas.onkey(k2, "Left")
+canvas.onkey(k3, "Right")
+canvas.onkey(k4, "Down")
+draw_onscreen()
+canvas.listen()
 done()
+
